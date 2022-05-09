@@ -11,27 +11,28 @@ import java.util.List;
 //la Anotacion inferior permite que los servicios indicados puedan consumir el api
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
+@RequestMapping("/clients")
 public class ClientRestController {
 
     @Autowired
     private IServiceClient clientService;
 
-    @GetMapping("/clients")
+    @GetMapping
     public List<Client> listClients(){
      return clientService.findAll();
     }
-    @GetMapping("/clients/{id}")
+    @GetMapping("/{id}")
     public Client view(@PathVariable Integer id){
         return  clientService.findById(id);
     }
 
-    @PostMapping("/clients")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
         public Client create(@RequestBody Client client){
             return clientService.save(client);
     }
 
-    @PutMapping("clients/{id}")
+    @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     public Client update(@RequestBody Client client, @PathVariable Integer id){
         Client getCliient = clientService.findById(id);
@@ -46,7 +47,7 @@ public class ClientRestController {
 
     }
 
-    @DeleteMapping("clients/{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
         public void delete(@PathVariable Integer id){
             clientService.delete(id);
