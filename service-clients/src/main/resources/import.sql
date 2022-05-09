@@ -1,0 +1,1 @@
+insert into clients (first_name, second_name, first_surname, second_surname, email, age, create_at) values ('Kevin','Neftali','Borge','Tobar','kevinborgetobar1998@gmail.com','23','2202-10-12');

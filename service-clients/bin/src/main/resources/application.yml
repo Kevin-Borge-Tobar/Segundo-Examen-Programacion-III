@@ -1,0 +1,12 @@
+server:
+  port: 8800
+
+datasource:
+  mysql:
+    url: jdbc:mysql://192.168.0.104:3306/clients
+    username: borge
+    password: Develop/2022
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    dialect: org.hibernate.dialect.MySQL8Dialect
+    showsql: true
